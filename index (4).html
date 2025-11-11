@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝗛𝗔𝗥𝗦𝗛 𝗦𝗨𝗥𝗘𝗦𝗛𝗢𝗧 - Join Now</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Telegram Pattern Background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://neuronexul.github.io/telegram-patterns/patterns/pattern-5.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            pointer-events: none;
+            filter: brightness(10);
+        }
+
+        .header {
+            width: 100%;
+            background: #1c1c1e;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .telegram-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .telegram-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: #0a84ff;
+        }
+
+        .header-title {
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .header-button {
+            background: #0a84ff;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .header-button:hover {
+            background: #0070e0;
+        }
+
+        .main-content {
+            margin-top: 70px;
+            padding: 30px 20px 20px;
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: calc(100vh - 70px);
+        }
+
+        .doodle {
+            position: absolute;
+            opacity: 0.15;
+            font-size: 30px;
+            animation: float 25s infinite ease-in-out;
+            filter: grayscale(1) brightness(0.5);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .doodle:nth-child(1) { top: 8%; left: 8%; animation-delay: 0s; }
+        .doodle:nth-child(2) { top: 12%; right: 12%; animation-delay: 3s; }
+        .doodle:nth-child(3) { bottom: 25%; left: 15%; animation-delay: 6s; }
+        .doodle:nth-child(4) { bottom: 18%; right: 10%; animation-delay: 9s; }
+        .doodle:nth-child(5) { top: 45%; left: 5%; animation-delay: 2s; }
+        .doodle:nth-child(6) { top: 38%; right: 8%; animation-delay: 7s; }
+        .doodle:nth-child(7) { bottom: 45%; left: 50%; animation-delay: 4s; }
+        .doodle:nth-child(8) { top: 25%; left: 45%; animation-delay: 8s; }
+        .doodle:nth-child(9) { top: 60%; right: 20%; animation-delay: 5s; }
+        .doodle:nth-child(10) { bottom: 35%; right: 45%; animation-delay: 1s; }
+
+        .container {
+            background: #1c1c1e;
+            border-radius: 16px;
+            padding: 25px 18px;
+            max-width: 320px;
+            width: 100%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            animation: slideUp 0.5s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 16px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .logo::after {
+            display: none;
+        }
+
+        .logo-text {
+            color: #ffd700;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .subscribers {
+            color: #8e8e93;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+
+        .contact-info {
+            color: #fff;
+            font-size: 12px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .contact-info a {
+            color: #0a84ff;
+            text-decoration: none;
+        }
+
+        .link-info {
+            color: #0a84ff;
+            font-size: 13px;
+            margin-bottom: 12px;
+            word-break: break-all;
+            line-height: 1.5;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+        }
+
+        .link-info:hover {
+            text-decoration: underline;
+        }
+
+        .ads-btn {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #d62828, #b71c1c);
+  padding: 6px 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(183, 28, 28, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Mild glow */
+.ads-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(214, 40, 40, 0.45);
+}
+
+/* Shine animation */
+.ads-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+  transform: skewX(-25deg);
+  animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  60% { left: 125%; }
+  100% { left: 125%; }
+}
+
+        .join-button {
+            background: #0a84ff;
+            color: white;
+            border: none;
+            padding: 14px 45px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 260px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .join-button:hover {
+            background: #0070e0;
+            transform: scale(1.02);
+        }
+
+        .join-button:active {
+            transform: scale(0.98);
+        }
+
+        .footer-text {
+            color: #8e8e93;
+            font-size: 13px;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        .footer-text strong {
+            color: #fff;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 35px 25px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .logo-text {
+                font-size: 28px;
+            }
+        }
+    </style>
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4081665972082332');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4081665972082332&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4081665972082332');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4081665972082332&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1344950960512801');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1344950960512801&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '3840332446275905');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=3840332446275905&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1494625031645452');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1494625031645452&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div class="telegram-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+            </div>
+            <div class="header-title">Telegram</div>
+        </div>
+        <a href="https://t.me/nitin4god" target="_blank" class="ads-btn">Ads Setup</a>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+        <div class="logo">
+    <img src="IMG_20251108_202231_275.jpg" alt="DMWIN Logo" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+        </div>
+
+        <h1> 𝗛𝗔𝗥𝗦𝗛 𝗦𝗨𝗥𝗘𝗦𝗛𝗢𝗧</h1>
+        <p class="subscribers">1,524 subscribers</p>
+
+        <div class="contact-info">
+            Any Problem : <a href="https://t.me/yourrahul71">@yourrahul71</a>
+        </div>
+
+        <a href="http://www.tashanwin.cc/#/register?invitationCode=453223925089" class="link-info" target="_blank">
+          http://www.tashanwin.cc/#/register?invitationCode=453223925089
+        </a>
+
+        <div class="dots">...</div>
+
+        <a href="https://t.me/+OJeVYQ282kxhZmM9" class="join-button">
+            JOIN CHANNEL
+        </a>
+
+        <div class="footer-text">
+            You are invited to the channel <strong>𝗛𝗔𝗥𝗦𝗛 𝗦𝗨𝗥𝗘𝗦𝗛𝗢𝗧</strong>. Click above to join.
+        </div>
+    </div>
+    </div>
+</body>
+</html>
