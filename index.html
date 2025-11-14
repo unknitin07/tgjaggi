@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jagjit VIP Prediction - Sureshot Predictions</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a0a14 50%, #0a0a1a 100%);
@@ -21,189 +16,71 @@
             justify-content: center;
             padding: 20px;
         }
-
-        .container {
-            max-width: 600px;
-            width: 100%;
-        }
-
+        .container { max-width: 600px; width: 100%; }
         .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 0, 64, 0.3);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,0,64,0.3);
             border-radius: 20px;
             padding: 40px 30px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
         }
-
-        .logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid;
-            border-image: linear-gradient(45deg, #ff0040, #0066ff) 1;
-            box-shadow: 0 0 30px rgba(255, 0, 64, 0.5);
-            animation: pulse 2s infinite;
-            display: block;
-            margin: 0 auto 20px;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
+        .logo { width:80px; height:80px; border-radius:50%; border:3px solid; border-image: linear-gradient(45deg,#ff0040,#0066ff) 1; box-shadow: 0 0 30px rgba(255,0,64,0.5); animation: pulse 2s infinite; display:block; margin:0 auto 20px; }
+        @keyframes pulse { 0%,100%{transform:scale(1);}50%{transform:scale(1.05);} }
         h1 {
-            font-size: 2em;
-            background: linear-gradient(45deg, #ff0040, #0066ff, #ff0040);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size:2em;
+            background: linear-gradient(45deg,#ff0040,#0066ff,#ff0040);
+            background-size:200% auto;
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
             animation: shine 3s linear infinite;
-            text-align: center;
-            margin-bottom: 8px;
-            text-transform: uppercase;
+            text-align:center;
+            margin-bottom:8px;
+            text-transform:uppercase;
         }
-
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #aaa;
-            font-size: 0.95em;
-            margin-bottom: 25px;
-        }
-
-        .features {
-            display: flex;
-            justify-content: space-around;
-            margin: 25px 0;
-            padding: 20px 0;
-            border-top: 1px solid rgba(255, 0, 64, 0.2);
-            border-bottom: 1px solid rgba(255, 0, 64, 0.2);
-        }
-
-        .feature {
-            text-align: center;
-            flex: 1;
-        }
-
-        .feature-icon {
-            font-size: 1.8em;
-            margin-bottom: 5px;
-        }
-
-        .feature span {
-            display: block;
-            font-size: 0.85em;
-            color: #999;
-        }
-
-        .screenshots {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 25px 0;
-        }
-
-        .screenshot-box {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(0, 102, 255, 0.3);
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .screenshot-box img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 8px;
-        }
-
-        .win-badge {
-            font-size: 0.75em;
-            background: linear-gradient(45deg, #00ff00, #00cc00);
-            color: #000;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-weight: bold;
-            display: inline-block;
-        }
-
+        @keyframes shine{ to{ background-position:200% center; } }
+        .subtitle { text-align:center; color:#aaa; font-size:0.95em; margin-bottom:25px; }
+        .features { display:flex; justify-content:space-around; margin:25px 0; padding:20px 0; border-top:1px solid rgba(255,0,64,0.2); border-bottom:1px solid rgba(255,0,64,0.2); }
+        .feature { text-align:center; flex:1; }
+        .feature-icon { font-size:1.8em; margin-bottom:5px; }
+        .feature span { display:block; font-size:0.85em; color:#999; }
+        .screenshots { display:grid; grid-template-columns:1fr 1fr; gap:15px; margin:25px 0; }
+        .screenshot-box { background: rgba(255,255,255,0.05); border:2px solid rgba(0,102,255,0.3); border-radius:10px; padding:10px; text-align:center; }
+        .screenshot-box img { width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:8px; }
+        .win-badge { font-size:0.75em; background:linear-gradient(45deg,#00ff00,#00cc00); color:#000; padding:5px 12px; border-radius:15px; font-weight:bold; display:inline-block; }
         .cta-button {
-            display: inline-block;
-            padding: 16px 45px;
-            font-size: 1.2em;
-            font-weight: bold;
-            text-decoration: none;
-            color: #fff;
-            background: linear-gradient(135deg, #ff0000, #ff0040, #ff3366, #ff0040, #ff0000);
-            background-size: 300% 300%;
-            border-radius: 50px;
-            box-shadow: 0 0 40px rgba(255, 0, 0, 0.8), 0 0 80px rgba(255, 0, 64, 0.6), 0 5px 30px rgba(0, 0, 0, 0.5);
-            animation: redGradient 3s ease infinite, redGlow 2s ease-in-out infinite;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            margin-top: 25px;
-            transition: transform 0.3s;
+            display:inline-block; padding:16px 45px; font-size:1.2em; font-weight:bold; text-decoration:none; color:#fff;
+            background: linear-gradient(135deg,#ff0000,#ff0040,#ff3366,#ff0040,#ff0000);
+            background-size:300% 300%; border-radius:50px; box-shadow: 0 0 40px rgba(255,0,0,0.8), 0 0 80px rgba(255,0,64,0.6), 0 5px 30px rgba(0,0,0,0.5);
+            animation: redGradient 3s ease infinite, redGlow 2s ease-in-out infinite; text-align:center; text-transform:uppercase; letter-spacing:1px;
+            border:2px solid rgba(255,255,255,0.3); margin-top:25px; transition: transform 0.3s;
         }
-
-        .button-wrapper {
-            text-align: center;
-        }
-
-        @keyframes redGradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes redGlow {
-            0%, 100% { box-shadow: 0 0 40px rgba(255, 0, 0, 0.8), 0 0 80px rgba(255, 0, 64, 0.6), 0 5px 30px rgba(0, 0, 0, 0.5); }
-            50% { box-shadow: 0 0 60px rgba(255, 0, 0, 1), 0 0 100px rgba(255, 0, 64, 0.8), 0 5px 40px rgba(0, 0, 0, 0.7); }
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-        }
-
-        .warning {
-            text-align: center;
-            font-size: 0.7em;
-            color: #666;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 500px) {
-            h1 { font-size: 1.6em; }
-            .features { flex-wrap: wrap; }
-            .feature { margin-bottom: 15px; }
-            .screenshots { grid-template-columns: 1fr; }
+        .button-wrapper { text-align:center; }
+        @keyframes redGradient { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }
+        @keyframes redGlow { 0%,100% { box-shadow: 0 0 40px rgba(255,0,0,0.8), 0 0 80px rgba(255,0,64,0.6), 0 5px 30px rgba(0,0,0,0.5);} 50% { box-shadow:0 0 60px rgba(255,0,0,1), 0 0 100px rgba(255,0,64,0.8), 0 5px 40px rgba(0,0,0,0.7);} }
+        .cta-button:hover { transform: scale(1.05); }
+        .warning { text-align:center; font-size:0.7em; color:#666; margin-top:20px; }
+        @media (max-width:500px) {
+            h1 { font-size:1.6em; } .features { flex-wrap:wrap; } .feature { margin-bottom:15px; } .screenshots { grid-template-columns:1fr; }
         }
     </style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '803471482562171');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=803471482562171&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '803471482562171');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=803471482562171&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <div class="container">
@@ -232,7 +109,8 @@ src="https://www.facebook.com/tr?id=803471482562171&ev=PageView&noscript=1"
             </div>
 
             <div class="button-wrapper">
-                <a href="https://t.me/+UPNTMnM8f9ZkOWI1" class="cta-button" target="_blank">🚀 JOIN VIP NOW</a>
+                <!-- id and data-href used by tracking script -->
+                <a id="joinBtn" class="cta-button" href="https://t.me/+UPNTMnM8f9ZkOWI1" data-href="https://t.me/+UPNTMnM8f9ZkOWI1" target="_blank" rel="noopener">🚀 JOIN VIP NOW</a>
             </div>
 
             <div class="screenshots">
@@ -249,5 +127,53 @@ src="https://www.facebook.com/tr?id=803471482562171&ev=PageView&noscript=1"
             <p class="warning">⚠️ Bet responsibly. Past results don't guarantee future wins.</p>
         </div>
     </div>
+
+    <script>
+    // Client-side click tracking:
+    // Sends a small JSON payload to /track-click then opens the telegram link.
+    (function(){
+        const TRACK_ENDPOINT = '/track-click'; // POST endpoint on same server
+        const btn = document.getElementById('joinBtn');
+        if(!btn) return;
+
+        btn.addEventListener('click', function(e){
+            // prevent default to ensure tracking call fires before navigation
+            e.preventDefault();
+            const href = this.dataset.href || this.href;
+
+            const payload = {
+                timestamp: new Date().toISOString(),
+                href: href,
+                userAgent: navigator.userAgent || '',
+                language: navigator.language || '',
+                screen: { width: screen.width || 0, height: screen.height || 0 },
+                referrer: document.referrer || ''
+            };
+
+            try {
+                const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+
+                // Prefer sendBeacon (fire-and-forget and works while unloading)
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon(TRACK_ENDPOINT, blob);
+                    // open the tg link immediately in new tab
+                    window.open(href, '_blank', 'noopener');
+                } else {
+                    // fallback to fetch
+                    fetch(TRACK_ENDPOINT, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload),
+                        keepalive: true
+                    }).catch(()=>{})
+                      .finally(()=> window.open(href, '_blank', 'noopener'));
+                }
+            } catch(err) {
+                // on any error, still open the link
+                window.open(href, '_blank', 'noopener');
+            }
+        });
+    })();
+    </script>
 </body>
 </html>
