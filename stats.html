@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<pre id="output">Loading stats...</pre>
+
+<script>
+// Fetch raw clicks.txt from server
+fetch('/clicks.txt')
+  .then(res => res.text())
+  .then(raw => {
+      if (!raw.trim()) {
+          document.getElementById("output").textContent = "No clicks recorded yet.";
+          return;
+      }
+
+      const lines = raw.trim().split("\n");
+      let count = lines.length;
+
+      // Build Telegram-style post
+      let post = "";
+      post += "📊 *JOIN BUTTON CLICK REPORT*\n";
+      post += "-----------------------------------\n";
+      post += "Total Clicks: " + count + "\n\n";
+
+      lines.forEach((l, i) => {
+          try {
+              const d = JSON.parse(l);
+              post += `${i+1}. 🕒 ${d.timestamp}\n`;
+              post += `   IP: ${d.ip}\n`;
+              post += `   Device: ${d.userAgent}\n`;
+              post += `-----------------------------------\n`;
+          } catch(e){}
+      });
+
+      document.getElementById("output").textContent = post;
+  })
+  .catch(err => {
+      document.getElementById("output").textContent = "Error loading stats.";
+  });
+</script>
+
+</body>
+</html>
